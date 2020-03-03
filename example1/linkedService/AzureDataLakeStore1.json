@@ -1,0 +1,13 @@
+{
+	"name": "AzureDataLakeStore1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://adfcopygen1.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "fb967f08-1ef2-4e3a-9db2-22b4d413078d",
+			"subscriptionId": "f50f21e7-d78c-411f-a537-3b4e35150985",
+			"resourceGroupName": "learn"
+		}
+	}
+}
