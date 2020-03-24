@@ -1,0 +1,112 @@
+{
+	"name": "Avro1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Gen2RimLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Avro",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "UserCommentAvro.avro",
+				"fileSystem": "crwch"
+			},
+			"avroCompressionCodec": "deflate",
+			"avroCompressionLevel": 1
+		},
+		"schema": {
+			"type": "record",
+			"name": "com.aa.lookahead.dataobjects.legality.UserComment",
+			"fields": [
+				{
+					"name": "commentId",
+					"type": "string"
+				},
+				{
+					"name": "commentText",
+					"type": "string"
+				},
+				{
+					"name": "userId",
+					"type": "string"
+				},
+				{
+					"name": "alertKey",
+					"type": {
+						"type": "record",
+						"name": "com.aa.lookahead.dataobjects.legality.keys.AlertKey",
+						"fields": [
+							{
+								"name": "alertId",
+								"type": "string"
+							},
+							{
+								"name": "employeeNumber",
+								"type": "string"
+							},
+							{
+								"name": "flightKey",
+								"type": {
+									"type": "record",
+									"name": "com.aa.lookahead.dataobjects.LKAFlightKey",
+									"fields": [
+										{
+											"name": "airlineCode",
+											"type": "string"
+										},
+										{
+											"name": "flightNumber",
+											"type": "string"
+										},
+										{
+											"name": "flightDate",
+											"type": "string"
+										},
+										{
+											"name": "departureStation",
+											"type": "string"
+										},
+										{
+											"name": "dupDepCode",
+											"type": "int"
+										},
+										{
+											"name": "snapshotId",
+											"type": "string"
+										}
+									]
+								}
+							},
+							{
+								"name": "sequencePosition",
+								"type": "string"
+							},
+							{
+								"name": "isProjectedAlert",
+								"type": "boolean"
+							}
+						]
+					}
+				},
+				{
+					"name": "flightKey",
+					"type": "com.aa.lookahead.dataobjects.LKAFlightKey"
+				},
+				{
+					"name": "appId",
+					"type": "string"
+				},
+				{
+					"name": "commentTimestamp",
+					"type": "long"
+				},
+				{
+					"name": "isActiveAlert",
+					"type": "boolean"
+				}
+			]
+		}
+	}
+}
