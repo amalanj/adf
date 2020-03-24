@@ -1,0 +1,20 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Gen2RimLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "part-00000.snappy.parquet",
+				"fileSystem": "crwch"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
