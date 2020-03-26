@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "flight_test-msg-eh-ns/test-msg-eh",
+				"fileName": "averooutputfromspark.avro",
 				"fileSystem": "crwch"
 			}
 		},
