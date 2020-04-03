@@ -24,9 +24,12 @@
 			"transformations": [
 				{
 					"name": "DerivedColumn1"
+				},
+				{
+					"name": "Select1"
 				}
 			],
-			"script": "source(output(\n\t\tyear as string,\n\t\t{ month} as string,\n\t\tcarrier as string,\n\t\tcarrier_name as string,\n\t\tairport as string,\n\t\tairport_name as string,\n\t\tarr_flights as string,\n\t\tarr_del15 as string,\n\t\tcarrier_ct as string,\n\t\t{ weather_ct} as string,\n\t\tnas_ct as string,\n\t\tsecurity_ct as string,\n\t\tlate_aircraft_ct as string,\n\t\tarr_cancelled as string,\n\t\tarr_diverted as string,\n\t\t{ arr_delay} as string,\n\t\t{ carrier_delay} as string,\n\t\tweather_delay as string,\n\t\tnas_delay as string,\n\t\tsecurity_delay as string,\n\t\tlate_aircraft_delay as string,\n\t\t{_c21} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1\nsource1 derive(partitionbydate = year+ { month}) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionBy('key',\n\t\t0,\n\t\tpartitionbydate\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(output(\n\t\tyear as string,\n\t\t{ month} as string,\n\t\tcarrier as string,\n\t\tcarrier_name as string,\n\t\tairport as string,\n\t\tairport_name as string,\n\t\tarr_flights as string,\n\t\tarr_del15 as string,\n\t\tcarrier_ct as string,\n\t\t{ weather_ct} as string,\n\t\tnas_ct as string,\n\t\tsecurity_ct as string,\n\t\tlate_aircraft_ct as string,\n\t\tarr_cancelled as string,\n\t\tarr_diverted as string,\n\t\t{ arr_delay} as string,\n\t\t{ carrier_delay} as string,\n\t\tweather_delay as string,\n\t\tnas_delay as string,\n\t\tsecurity_delay as string,\n\t\tlate_aircraft_delay as string,\n\t\t{_c21} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1\nSelect1 derive(partitionbydate = year+ { month}) ~> DerivedColumn1\nsource1 select(mapColumn(\n\t\tyear,\n\t\t{ month},\n\t\tcarrier,\n\t\tcarrier_name,\n\t\tairport,\n\t\tairport_name,\n\t\tarr_flights,\n\t\tarr_del15,\n\t\tcarrier_ct,\n\t\t{ weather_ct},\n\t\tnas_ct,\n\t\tsecurity_ct,\n\t\tlate_aircraft_ct,\n\t\tarr_cancelled,\n\t\tarr_diverted,\n\t\t{ arr_delay},\n\t\t{ carrier_delay},\n\t\tweather_delay,\n\t\tnas_delay,\n\t\tsecurity_delay,\n\t\tlate_aircraft_delay\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionBy('key',\n\t\t0,\n\t\tpartitionbydate\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
