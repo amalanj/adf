@@ -1,0 +1,32 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumn1"
+				}
+			],
+			"script": "source(output(\n\t\tyear as short,\n\t\t{ month} as short,\n\t\tcarrier as string,\n\t\tcarrier_name as string,\n\t\tairport as string,\n\t\tairport_name as string,\n\t\tarr_flights as double,\n\t\tarr_del15 as double,\n\t\tcarrier_ct as double,\n\t\t{ weather_ct} as double,\n\t\tnas_ct as double,\n\t\tsecurity_ct as double,\n\t\tlate_aircraft_ct as double,\n\t\tarr_cancelled as double,\n\t\tarr_diverted as double,\n\t\t{ arr_delay} as double,\n\t\t{ carrier_delay} as double,\n\t\tweather_delay as double,\n\t\tnas_delay as double,\n\t\tsecurity_delay as double,\n\t\tlate_aircraft_delay as double,\n\t\t{_c21} as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1\nsource1 derive(partitionbydate = concat(toString(year),\"-\", toString({ month}))) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'parquet',\n\tpartitionBy('key',\n\t\t0,\n\t\tpartitionbydate\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}
