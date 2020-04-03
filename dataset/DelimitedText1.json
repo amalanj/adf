@@ -20,108 +20,167 @@
 		},
 		"schema": [
 			{
+				"name": "ID",
 				"type": "String"
 			},
 			{
+				"name": "Date",
 				"type": "String"
 			},
 			{
+				"name": "DateType",
 				"type": "String"
 			},
 			{
+				"name": "Age",
 				"type": "String"
 			},
 			{
+				"name": "Sex",
 				"type": "String"
 			},
 			{
+				"name": "Race",
 				"type": "String"
 			},
 			{
+				"name": "ResidenceCity",
 				"type": "String"
 			},
 			{
+				"name": "ResidenceCounty",
 				"type": "String"
 			},
 			{
+				"name": "ResidenceState",
 				"type": "String"
 			},
 			{
+				"name": "DeathCity",
 				"type": "String"
 			},
 			{
+				"name": "DeathCounty",
 				"type": "String"
 			},
 			{
+				"name": "Location",
 				"type": "String"
 			},
 			{
+				"name": "LocationifOther",
 				"type": "String"
 			},
 			{
+				"name": "DescriptionofInjury",
 				"type": "String"
 			},
 			{
+				"name": "InjuryPlace",
 				"type": "String"
 			},
 			{
+				"name": "InjuryCity",
 				"type": "String"
 			},
 			{
+				"name": "InjuryCounty",
 				"type": "String"
 			},
 			{
+				"name": "InjuryState",
 				"type": "String"
 			},
 			{
+				"name": "COD",
 				"type": "String"
 			},
 			{
+				"name": "OtherSignifican",
 				"type": "String"
 			},
 			{
+				"name": "Heroin",
 				"type": "String"
 			},
 			{
+				"name": "Cocaine",
 				"type": "String"
 			},
 			{
+				"name": "Fentanyl",
 				"type": "String"
 			},
 			{
+				"name": "FentanylAnalogue",
 				"type": "String"
 			},
 			{
+				"name": "Oxycodone",
 				"type": "String"
 			},
 			{
+				"name": "Oxymorphone",
 				"type": "String"
 			},
 			{
+				"name": "Ethanol",
 				"type": "String"
 			},
 			{
+				"name": "Hydrocodone",
 				"type": "String"
 			},
 			{
+				"name": "Benzodiazepine",
 				"type": "String"
 			},
 			{
+				"name": "Methadone",
 				"type": "String"
 			},
 			{
+				"name": "Amphet",
 				"type": "String"
 			},
 			{
+				"name": "Tramad",
 				"type": "String"
 			},
 			{
+				"name": "Morphine_NotHeroin",
 				"type": "String"
 			},
 			{
+				"name": "Hydromorphone",
 				"type": "String"
 			},
 			{
+				"name": "Other",
+				"type": "String"
+			},
+			{
+				"name": "OpiateNOS",
+				"type": "String"
+			},
+			{
+				"name": "AnyOpioid",
+				"type": "String"
+			},
+			{
+				"name": "MannerofDeath",
+				"type": "String"
+			},
+			{
+				"name": "DeathCityGeo",
+				"type": "String"
+			},
+			{
+				"name": "ResidenceCityGeo",
+				"type": "String"
+			},
+			{
+				"name": "InjuryCityGeo",
 				"type": "String"
 			}
 		]
