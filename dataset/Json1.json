@@ -1,0 +1,41 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "aarimStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "favorite-tweets.jsonl",
+				"container": "raw"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Text": {
+					"type": "string"
+				},
+				"UserName": {
+					"type": "string"
+				},
+				"LinkToTweet": {
+					"type": "string"
+				},
+				"FirstLinkUrl": {
+					"type": "string"
+				},
+				"CreatedAt": {
+					"type": "string"
+				},
+				"TweetEmbedCode": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
