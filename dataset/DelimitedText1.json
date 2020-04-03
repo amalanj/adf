@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Accidental_Drug_Related_Deaths_2012-2018.csv",
+				"fileName": "915633647_12020_2449_airline_delay_causes.csv",
 				"container": "raw"
 			},
 			"columnDelimiter": ",",
@@ -20,167 +20,87 @@
 		},
 		"schema": [
 			{
-				"name": "ID",
+				"name": "year",
 				"type": "String"
 			},
 			{
-				"name": "Date",
+				"name": " month",
 				"type": "String"
 			},
 			{
-				"name": "DateType",
+				"name": "carrier",
 				"type": "String"
 			},
 			{
-				"name": "Age",
+				"name": "carrier_name",
 				"type": "String"
 			},
 			{
-				"name": "Sex",
+				"name": "airport",
 				"type": "String"
 			},
 			{
-				"name": "Race",
+				"name": "airport_name",
 				"type": "String"
 			},
 			{
-				"name": "ResidenceCity",
+				"name": "arr_flights",
 				"type": "String"
 			},
 			{
-				"name": "ResidenceCounty",
+				"name": "arr_del15",
 				"type": "String"
 			},
 			{
-				"name": "ResidenceState",
+				"name": "carrier_ct",
 				"type": "String"
 			},
 			{
-				"name": "DeathCity",
+				"name": " weather_ct",
 				"type": "String"
 			},
 			{
-				"name": "DeathCounty",
+				"name": "nas_ct",
 				"type": "String"
 			},
 			{
-				"name": "Location",
+				"name": "security_ct",
 				"type": "String"
 			},
 			{
-				"name": "LocationifOther",
+				"name": "late_aircraft_ct",
 				"type": "String"
 			},
 			{
-				"name": "DescriptionofInjury",
+				"name": "arr_cancelled",
 				"type": "String"
 			},
 			{
-				"name": "InjuryPlace",
+				"name": "arr_diverted",
 				"type": "String"
 			},
 			{
-				"name": "InjuryCity",
+				"name": " arr_delay",
 				"type": "String"
 			},
 			{
-				"name": "InjuryCounty",
+				"name": " carrier_delay",
 				"type": "String"
 			},
 			{
-				"name": "InjuryState",
+				"name": "weather_delay",
 				"type": "String"
 			},
 			{
-				"name": "COD",
+				"name": "nas_delay",
 				"type": "String"
 			},
 			{
-				"name": "OtherSignifican",
+				"name": "security_delay",
 				"type": "String"
 			},
 			{
-				"name": "Heroin",
-				"type": "String"
-			},
-			{
-				"name": "Cocaine",
-				"type": "String"
-			},
-			{
-				"name": "Fentanyl",
-				"type": "String"
-			},
-			{
-				"name": "FentanylAnalogue",
-				"type": "String"
-			},
-			{
-				"name": "Oxycodone",
-				"type": "String"
-			},
-			{
-				"name": "Oxymorphone",
-				"type": "String"
-			},
-			{
-				"name": "Ethanol",
-				"type": "String"
-			},
-			{
-				"name": "Hydrocodone",
-				"type": "String"
-			},
-			{
-				"name": "Benzodiazepine",
-				"type": "String"
-			},
-			{
-				"name": "Methadone",
-				"type": "String"
-			},
-			{
-				"name": "Amphet",
-				"type": "String"
-			},
-			{
-				"name": "Tramad",
-				"type": "String"
-			},
-			{
-				"name": "Morphine_NotHeroin",
-				"type": "String"
-			},
-			{
-				"name": "Hydromorphone",
-				"type": "String"
-			},
-			{
-				"name": "Other",
-				"type": "String"
-			},
-			{
-				"name": "OpiateNOS",
-				"type": "String"
-			},
-			{
-				"name": "AnyOpioid",
-				"type": "String"
-			},
-			{
-				"name": "MannerofDeath",
-				"type": "String"
-			},
-			{
-				"name": "DeathCityGeo",
-				"type": "String"
-			},
-			{
-				"name": "ResidenceCityGeo",
-				"type": "String"
-			},
-			{
-				"name": "InjuryCityGeo",
+				"name": "late_aircraft_delay",
 				"type": "String"
 			}
 		]
