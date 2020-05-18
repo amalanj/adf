@@ -1,0 +1,31 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: Admin-Prod
+  demands:
+    - Agent.OS -equals Windows_NT
+
+variables:
+- name: logAnalyticsTemplateDirectory
+  value: learn-la-ws-armtemplate
+
+steps:
+   
+- script: |
+    mkdir -p $(Build.ArtifactStagingDirectory)\laws
+    xcopy "$(Build.SourcesDirectory)\$(logAnalyticsTemplateDirectory)" "$(Build.ArtifactStagingDirectory)\laws" /s /e /y
+#  workingDirectory: $(Build.ArtifactStagingDirectory)\laws 
+  displayName: 'Prepare Azure Log Analytics Build Artifacts'
+  workingDirectory: $(Build.ArtifactStagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Azure Log Analytics Artifacts
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)\laws'
+    artifactName: laws
