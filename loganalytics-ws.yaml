@@ -7,9 +7,9 @@ trigger:
 - master
 
 pool:
-  name: Admin-Prod
-  demands:
-    - Agent.OS -equals Windows_NT
+  name: Azure Pipelines
+#  demands:
+#    - Agent.OS -equals Windows_NT
 
 variables:
 - name: logAnalyticsTemplateDirectory
